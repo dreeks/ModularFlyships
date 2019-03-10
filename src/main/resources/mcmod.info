@@ -1,0 +1,16 @@
+[
+{
+  "modid": "modularflyships",
+  "name": "Modular Flyships",
+  "description": "Adds some futuristic vehicules to Minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://dreeks.xyz/",
+  "updateUrl": "",
+  "authorList": ["Oxodao", "Cylgom"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
