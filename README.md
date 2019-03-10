@@ -13,6 +13,9 @@ There will soon be a website with everything related to the mod.
 ## Why ?
 This is a long standing idea that we had and never had the time nor the knowledge to do. We were playing a lot of Feed the beast back on Direwolf20's 1.6.4 pack and we always wanted some way to travel (Without teleportation) around the world faster than by feet.
 
+### Old attempts
+https://www.youtube.com/watch?v=k9hGku56fwY
+
 ## Licence
     ModularFlyship (Minecraft mod)
     Copyright (C) 2019 Team Dreeks (Nathan <Oxodao> JANCZEWSKI, Guillaume <Cylgom>)
