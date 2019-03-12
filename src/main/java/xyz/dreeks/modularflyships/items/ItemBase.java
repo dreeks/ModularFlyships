@@ -6,7 +6,7 @@ import xyz.dreeks.modularflyships.ModularFlyships;
 public class ItemBase extends Item {
 
     public ItemBase(String name) {
-        this.setRegistryName(name);
+        this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(ModularFlyships.instance.tab);
     }

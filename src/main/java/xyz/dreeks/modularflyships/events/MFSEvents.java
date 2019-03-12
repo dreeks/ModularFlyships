@@ -7,6 +7,7 @@ public class MFSEvents {
 
     public static void preInit(FMLPreInitializationEvent fpie) {
         MinecraftForge.EVENT_BUS.register(new ItemEvents());
+        MinecraftForge.EVENT_BUS.register(new BlocksEvents());
         MinecraftForge.EVENT_BUS.register(new EntityEvents());
     }
 

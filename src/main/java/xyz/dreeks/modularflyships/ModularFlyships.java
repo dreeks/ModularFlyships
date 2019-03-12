@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import scala.collection.immutable.Stream;
+import xyz.dreeks.modularflyships.entities.MFSEntities;
 import xyz.dreeks.modularflyships.events.MFSEvents;
 import xyz.dreeks.modularflyships.items.MFSItems;
 import xyz.dreeks.modularflyships.proxy.IProxy;
@@ -36,6 +37,7 @@ public class ModularFlyships
 
         MFSConfiguration.preInit(event);
         MFSItems.preInit(event);
+        MFSEntities.preInit(event);
         MFSEvents.preInit(event);
 
         proxy.registerRenders();
