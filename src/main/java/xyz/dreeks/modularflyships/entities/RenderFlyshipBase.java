@@ -9,6 +9,7 @@ import xyz.dreeks.modularflyships.utils.Constants;
 
 import static org.lwjgl.opengl.GL11.GL_BLEND;
 import static org.lwjgl.opengl.GL11.GL_LINES;
+import static org.lwjgl.opengl.GL11.GL_TRIANGLE_STRIP;
 
 public class RenderFlyshipBase extends Render<EntityFlyshipBase> {
 
@@ -26,33 +27,8 @@ public class RenderFlyshipBase extends Render<EntityFlyshipBase> {
         drawSquare(x, y + 2.5, z, 0f, 0f, 1f, 1f);
     }
 
-    static void drawSquare(double x, double y, double z, float r, float g, float b, float a)
-    {
+    static void drawSquare(double x, double y, double z, float r, float g, float b, float a) {
         GlStateManager.pushMatrix();
-
-            GlStateManager.glLineWidth(20f);
-            GlStateManager.disableTexture2D();
-            GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_DST_ALPHA);
-
-            GlStateManager.glBegin(GL_LINES);
-
-                GlStateManager.color(r, g, b, a);
-
-                GlStateManager.glVertex3f((float)x, (float)y, (float)z);
-                GlStateManager.glVertex3f((float)x+1, (float)y, (float)z);
-
-                GlStateManager.glVertex3f((float)x+1, (float)y, (float)z);
-                GlStateManager.glVertex3f((float)x+1, (float)y, (float)z+1);
-
-                GlStateManager.glVertex3f((float)x+1, (float)y, (float)z+1);
-                GlStateManager.glVertex3f((float)x, (float)y, (float)z+1);
-
-                GlStateManager.glVertex3f((float)x, (float)y, (float)z+1);
-                GlStateManager.glVertex3f((float)x, (float)y, (float)z);
-
-            GlStateManager.glEnd();
-
-            GlStateManager.enableTexture2D();
 
         GlStateManager.popMatrix();
     }
