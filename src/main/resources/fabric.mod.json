@@ -1,17 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "modularflyships",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Modular Flyships",
+  "description": "This mod adds a real vehicule to Minecraft to follow along in your advanture",
   "authors": [
-    "Me!"
+    "Oxodao",
+    "nullgemm"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
 
   "license": "CC0-1.0",
   "icon": "assets/modid/icon.png",
@@ -19,19 +16,19 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "xyz.dreeks.modularflyships.ModularFlyships"
+    ],
+    "client": [
+      "xyz.dreeks.modularflyships.ModularFlyshipsClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "modularflyships.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
