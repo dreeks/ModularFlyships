@@ -7,17 +7,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.dreeks.modularflyships.entity.FlyshipEntity;
-import xyz.dreeks.modularflyships.model.PressedKey;
+import xyz.dreeks.modularflyships.network.C2SDebugSpawnship;
+import xyz.dreeks.modularflyships.network.C2SUpdateMovement;
 
 public class ModularFlyships implements ModInitializer {
 
 	public static final String MOD_NAME = "modularflyships";
-
-	public static final Identifier PACKET_MOVEMENT = new Identifier(MOD_NAME, "update_movement");
+	public static final boolean DEBUG_MODE = true;
 
 	public static final EntityType<Entity> MODULAR_FLYSHIP = Registry.register(
 		Registry.ENTITY_TYPE,
@@ -27,16 +26,11 @@ public class ModularFlyships implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ServerSidePacketRegistry.INSTANCE.register(PACKET_MOVEMENT, (packetContext, attachedData) -> {
-			PressedKey pk = new PressedKey(attachedData);
+		ServerSidePacketRegistry.INSTANCE.register(C2SUpdateMovement.ID, new C2SUpdateMovement());	
 
-			packetContext.getTaskQueue().execute(() -> {
-				PlayerEntity ep = packetContext.getPlayer();
-				if (ep.getVehicle() != null && ep.getVehicle() instanceof FlyshipEntity) {
-					((FlyshipEntity)ep.getVehicle()).updateControls(pk);
-				}
-			});
-		});	
+		if (DEBUG_MODE) {
+			ServerSidePacketRegistry.INSTANCE.register(C2SDebugSpawnship.ID, new C2SDebugSpawnship());	
+		}
 	}
 
 }

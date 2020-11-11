@@ -1,11 +1,14 @@
 package xyz.dreeks.modularflyships.client.model;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import xyz.dreeks.modularflyships.entity.FlyshipEntity;
 
+@Environment(EnvType.CLIENT)
 public class FlyshipModel extends EntityModel<FlyshipEntity> {
     private final ModelPart keyboard_support;
     private final ModelPart keyboard;

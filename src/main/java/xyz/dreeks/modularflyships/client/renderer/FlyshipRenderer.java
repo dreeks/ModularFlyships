@@ -1,29 +1,23 @@
 package xyz.dreeks.modularflyships.client.renderer;
 
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.util.Identifier;
-import xyz.dreeks.modularflyships.ModularFlyships;
-import xyz.dreeks.modularflyships.client.model.FlyshipModel;
-import xyz.dreeks.modularflyships.entity.FlyshipEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.model.BoatEntityModel;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
-import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.text.StringVisitable;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Matrix4f;
-import net.minecraft.util.math.Quaternion;
+import xyz.dreeks.modularflyships.ModularFlyships;
+import xyz.dreeks.modularflyships.client.model.FlyshipModel;
+import xyz.dreeks.modularflyships.entity.FlyshipEntity;
 
 @Environment(EnvType.CLIENT)
 public class FlyshipRenderer extends EntityRenderer<FlyshipEntity> {

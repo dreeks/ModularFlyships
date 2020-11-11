@@ -32,6 +32,7 @@ import xyz.dreeks.modularflyships.ModularFlyships;
 import xyz.dreeks.modularflyships.client.gui.GuiFlyship;
 import xyz.dreeks.modularflyships.model.EnumMovementMode;
 import xyz.dreeks.modularflyships.model.PressedKey;
+import xyz.dreeks.modularflyships.network.C2SUpdateMovement;
 
 public class FlyshipEntity extends Entity {
 
@@ -192,7 +193,7 @@ public class FlyshipEntity extends Entity {
       this.updateDataTrackers();
 
       if (this.world.isClient && requiresUpdate) {
-         ClientSidePacketRegistry.INSTANCE.sendToServer(ModularFlyships.PACKET_MOVEMENT, pk.toPacket());
+         ClientSidePacketRegistry.INSTANCE.sendToServer(C2SUpdateMovement.ID, pk.toPacket());
       }
    }
 
@@ -202,9 +203,6 @@ public class FlyshipEntity extends Entity {
 
    public ActionResult interact(PlayerEntity player, Hand hand) {
       if (player.shouldCancelInteraction()) {
-         if (this.world.isClient) {
-            MinecraftClient.getInstance().openScreen(new CottonClientScreen(new GuiFlyship(this)));
-         }
          return ActionResult.SUCCESS;
       } else {
          if (!this.world.isClient) {
